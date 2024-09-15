@@ -1,0 +1,6 @@
+@CBS.Services.OrderAPI_HostAddress = http://localhost:5118
+
+GET {{CBS.Services.OrderAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

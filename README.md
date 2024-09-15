@@ -2,7 +2,7 @@
 
 a full stack project with .net C#. 
 
-1. [howtorun.md](howtorun.md) - detailed steps to run this project locally
+documentation is [available here](https://jay-study-nildana.github.io/comicbookshop/)
 
 # references
 

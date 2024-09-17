@@ -1,8 +1,16 @@
 # Comic Book Shop - Documentation
 
-documentation for the project.
+[<img src="cbsa.png">]()
 
-# Topics
+welcome to the comic book shop. A full stack .net project. This is version 1.0.0
+
+# Project Architecture
+
+[<img src="cbsb.png">]()
+
+read more about the project architecture [here](projectarc.md)
+
+# More Explanations
 
 1. [how to run](howtorun.md)
 1. [issues and known problems](issues.md)

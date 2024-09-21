@@ -13,6 +13,11 @@ read more about the project architecture [here](projectarc.md)
 # More Explanations
 
 1. [how to run](howtorun.md)
+    1. [notes about sql server](sqllocal.md)
+    1. [notes about azure service bus](azureservicebus.md)
+    1. [notes about auth](auth.md)
+    1. [notes about stripe](stripe.md)
+    1. [notes about dummy data](dummydata.md)
 1. [issues and known problems](issues.md)
 1. [video tutorials](video.md)
 

@@ -4,8 +4,8 @@ find info about running the project locally.
 
 Video Guides
 
-1. [https://youtu.be/ULdF8ehnjR0](https://youtu.be/ULdF8ehnjR0) : Video that shows how to download, configure and run the project locally. (video scheduled to be published on September 19th 2024, 10 PM IST)
-1. [https://youtu.be/OPjs9nOiKjY](https://youtu.be/OPjs9nOiKjY) : Video walkthrough of the project, like a live demo. (video scheduled to be published on September 20th 2024, 10 PM IST)
+1. [https://youtu.be/ULdF8ehnjR0](https://youtu.be/ULdF8ehnjR0) : Video that shows how to download, configure and run the project locally.
+1. [https://youtu.be/OPjs9nOiKjY](https://youtu.be/OPjs9nOiKjY) : Video walkthrough of the project, like a live demo. 
 
 There are a total of 8 projects. 7 micro services. 1 class library. You need to get the following keys/secrets before building this.
 
@@ -15,6 +15,7 @@ There are a total of 8 projects. 7 micro services. 1 class library. You need to 
 1. Create the queues as per the appsettings.json of each project in your azure service. 
 1. Create a 256 bit key, and put it as 'Secret' (for OAuth/Identity)
 1. Create a Stripe key, and put it in 'SecretKey' (for Stripe Payment Processing). Remember to use the 'test' key and not the publishable key.
+1. Except for the 'MessageBus' project (which is class library), every other project should be running at the same time via Multiple startup project option.
 
 # book a session with me
 

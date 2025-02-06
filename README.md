@@ -1,6 +1,6 @@
 # comicbookshop
 
-a full stack project with .net C#. 
+a full stack project with .net C#.
 
 documentation is [available here](https://jay-study-nildana.github.io/comicbookshop/)
 

@@ -2,20 +2,61 @@
 
 find info about running the project locally.
 
-Video Guides
+## Requisites
+
+1. SQL Server, more notes here [sqllocal.md](sqllocal.md)
+1. Azure Service Bus, more notes here [azureservicebus.md](azureservicebus.md)
+1. obtain a 256 bit key, more notes here [auth.md](auth.md)
+1. Obtain a Stripe key, more notes here [stripe.md](stripe.md)
+
+## Additional Details about running this project
+
+1. CBS.Web
+    1. Nothing to Change or Update. Use as it is.
+1. CBS.MessageBus
+    1. Update the 'MessageBus : IMessageBus' with connection string of Azure Service Bus
+1. CBS.EmailAPI
+    1. Update 'DefaultConnection'
+        1. This is your SQL Server Connection String. 
+    1. Update 'EmailShoppingCartQueue'
+        1. This is your Azure Queue for Emails
+    1. Update 'RegisterUserQueue'
+        1. This is your Azure Queue for User Registration
+    1. Update 'OrderCreatedTopic'
+        1. This is your Azure Queue for Order Creation
+    1. Update 'OrderCreated_Email_Subscription'
+        1. This is your Azure Queue for Email Subscription
+    1. Update 'ServiceBusConnectionString'
+        1. This is the connection string obtained via shared access policies
+1. CBS.Services.AuthAPI
+    1. Update the secret for 'Secret' with a 256 bit key        
+    1. Update 'DefaultConnection'
+        1. This is your SQL Server Connection String. 
+    1. Update 'RegisterUserQueue'
+        1. This is your Azure Queue for User Registration
+1. CBS.Services.CouponAPI
+    1. Update 'DefaultConnection'
+        1. This is your SQL Server Connection String.     
+    1. Update the secret for 'Secret' with a 256 bit key
+    1. Update the 'SecretKey' from Stripe
+1. CBS.Services.OrderAPI
+    1. Update 'DefaultConnection'
+        1. This is your SQL Server Connection String.     
+    1. Update the secret for 'Secret' with a 256 bit key
+    1. Update 'OrderCreatedTopic'
+        1. This is your Azure Queue for Order Creation    
+    1. Update the 'SecretKey' from Stripe
+1. CBS.Services.ProductAPI
+    1. Update 'DefaultConnection'
+        1. This is your SQL Server Connection String.     
+    1. Update the secret for 'Secret' with a 256 bit key
+    1. Update 'EmailShoppingCartQueue'
+        1. This is your Azure Queue for Emails    
+
+## Video Guides
 
 1. [https://youtu.be/ULdF8ehnjR0](https://youtu.be/ULdF8ehnjR0) : Video that shows how to download, configure and run the project locally.
 1. [https://youtu.be/OPjs9nOiKjY](https://youtu.be/OPjs9nOiKjY) : Video walkthrough of the project, like a live demo. 
-
-There are a total of 8 projects. 7 micro services. 1 class library. You need to get the following keys/secrets before building this.
-
-1. The project is built using a locally running SQL server. So, update the 'DefaultConnection' accordingly as per the name or your local server or azure server. Automatic db update is enabled in all projects, but you could do 'update-database' individually to make sure your db is ready.
-1. Update the 'ServiceBusConnectionString' with the azure service bus shared access key.
-1. Update the 'connectionString' in MessageBus also with the azure service bus shared access key.
-1. Create the queues as per the appsettings.json of each project in your azure service. 
-1. Create a 256 bit key, and put it as 'Secret' (for OAuth/Identity)
-1. Create a Stripe key, and put it in 'SecretKey' (for Stripe Payment Processing). Remember to use the 'test' key and not the publishable key.
-1. Except for the 'MessageBus' project (which is class library), every other project should be running at the same time via Multiple startup project option.
 
 # book a session with me
 

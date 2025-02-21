@@ -38,13 +38,13 @@ namespace CBS.EmailAPI.Services
         public async Task LogOrderPlaced(RewardsMessage rewardsDto)
         {
             string message = "New Order Placed. <br/> Order ID : " + rewardsDto.OrderId;
-            await LogAndEmail(message, "dotnetmastery@gmail.com");
+            await LogAndEmail(message, "emailtosendstuffto@somerandomemail.com");
         }
 
         public async Task RegisterUserEmailAndLog(string email)
         {
             string message = "User Registeration Successful. <br/> Email : " + email;
-            await LogAndEmail(message, "dotnetmastery@gmail.com");
+            await LogAndEmail(message, "emailtosendstuffto@somerandomemail.com");
         }
 
         private async Task<bool> LogAndEmail(string message, string email)

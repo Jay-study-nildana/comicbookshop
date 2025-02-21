@@ -14,11 +14,6 @@ GitHub Project Board is [available here](https://github.com/users/Jay-study-nild
 
 1. [calendly](https://calendly.com/jaycodingtutor/30min)
 
-
-# book a session with me
-
-1. [calendly](https://calendly.com/jaycodingtutor/30min)
-
 # hire and get to know me
 
 find ways to hire me, follow me and stay in touch with me.

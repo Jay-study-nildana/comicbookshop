@@ -1,8 +1,12 @@
-# Comic Book Shop - Documentation
+# Comic Book Shop - Documentation - Version 1.0.2
 
 [<img src="cbsa.png">]()
 
-welcome to the comic book shop. A full stack .net project. This is version 1.0.0
+welcome to the comic book shop. A full stack .net project.
+
+want to contribute or report issues, repo is [available here](https://github.com/Jay-study-nildana/comicbookshop). 
+
+GitHub Project Board is [available here](https://github.com/users/Jay-study-nildana/projects/8)
 
 # Project Architecture
 

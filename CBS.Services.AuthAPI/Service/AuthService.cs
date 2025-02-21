@@ -85,6 +85,8 @@ namespace CBS.Services.AuthAPI.Service
             try
             {
                 var result = await _userManager.CreateAsync(user, registrationRequestDto.Password);
+
+
                 if (result.Succeeded)
                 {
                     var userToReturn = _db.ApplicationUsers.First(u => u.UserName == registrationRequestDto.Email);

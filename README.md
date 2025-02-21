@@ -1,8 +1,10 @@
-# comicbookshop
+# comic book shop - Version 1.0.2
 
 a full stack project with .net C#.
 
 documentation is [available here](https://jay-study-nildana.github.io/comicbookshop/)
+
+GitHub Project Board is [available here](https://github.com/users/Jay-study-nildana/projects/8)
 
 # references
 

@@ -13,14 +13,15 @@ namespace CBS.EmailAPI.Messaging
         private readonly string emailCartQueue;
         private readonly string registerUserQueue;
         private readonly IConfiguration _configuration;
-        private readonly EmailService _emailService;
+        //private readonly EmailService _emailService;
         private readonly string orderCreated_Topic;
         private readonly string orderCreated_Email_Subscription;
         private ServiceBusProcessor _emailOrderPlacedProcessor;
         private ServiceBusProcessor _emailCartProcessor;
         private ServiceBusProcessor _registerUserProcessor;
+        private readonly IEmailService _emailService;
 
-        public AzureServiceBusConsumer(IConfiguration configuration, EmailService emailService)
+        public AzureServiceBusConsumer(IConfiguration configuration, IEmailService emailService)
         {
             _emailService = emailService;
             _configuration = configuration;

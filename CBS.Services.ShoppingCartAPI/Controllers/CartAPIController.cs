@@ -19,10 +19,10 @@ namespace CBS.Services.ShoppingCartAPI.Controllers
         private IProductService _productService;
         private ICouponService _couponService;
         private IConfiguration _configuration;
-        private readonly IMessageBus _messageBus;
+        private readonly IMessageBus2 _messageBus;
         public CartAPIController(AppDbContext db,
             IMapper mapper, IProductService productService, ICouponService couponService, 
-            IMessageBus messageBus, 
+            IMessageBus2 messageBus, 
             IConfiguration configuration)
         {
             _db = db;
@@ -99,7 +99,9 @@ namespace CBS.Services.ShoppingCartAPI.Controllers
         {
             try
             {
-                await _messageBus.PublishMessage(cartDto, _configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
+                string topicName = _configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue");
+                string connectionString = _configuration.GetValue<string>("ServiceBusConnectionString");
+                await _messageBus.PublishMessage2(cartDto, topicName, connectionString);
                 _response.Result = true;
             }
             catch (Exception ex)

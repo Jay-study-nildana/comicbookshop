@@ -21,11 +21,11 @@ namespace CBS.Services.OrderAPI.Controllers
         private IMapper _mapper;
         private readonly AppDbContext _db;
         private IProductService _productService;
-        private readonly IMessageBus _messageBus;
+        private readonly IMessageBus2 _messageBus;
         private readonly IConfiguration _configuration;
         public OrderAPIController(AppDbContext db,
             IProductService productService, IMapper mapper, IConfiguration configuration
-            , IMessageBus messageBus)
+            , IMessageBus2 messageBus)
         {
             _db = db;
             _messageBus = messageBus;
@@ -198,7 +198,8 @@ namespace CBS.Services.OrderAPI.Controllers
                         UserId = orderHeader.UserId
                     };
                     string topicName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
-                    await _messageBus.PublishMessage(rewardsDto, topicName);
+                    string connectionString = _configuration.GetValue<string>("ServiceBusConnectionString");
+                    await _messageBus.PublishMessage2(rewardsDto, topicName,connectionString);
                     _response.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
                 }
 

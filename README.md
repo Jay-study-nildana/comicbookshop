@@ -1,4 +1,4 @@
-# comic book shop - Version 1.0.2
+# comic book shop - Version 1.0.3
 
 a full stack project with .net C#.
 

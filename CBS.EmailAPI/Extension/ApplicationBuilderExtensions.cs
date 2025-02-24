@@ -4,27 +4,25 @@ namespace CBS.EmailAPI.Extension
 {
     public static class ApplicationBuilderExtensions
     {
-        private static IAzureServiceBusConsumer ServiceBusConsumer { get; set; }
-
         public static IApplicationBuilder UseAzureServiceBusConsumer(this IApplicationBuilder app)
         {
-            ServiceBusConsumer = app.ApplicationServices.GetService<IAzureServiceBusConsumer>();
             var hostApplicationLife = app.ApplicationServices.GetService<IHostApplicationLifetime>();
 
-            hostApplicationLife.ApplicationStarted.Register(OnStart);
-            hostApplicationLife.ApplicationStopping.Register(OnStop);
+            hostApplicationLife.ApplicationStarted.Register(() =>
+            {
+                var scope = app.ApplicationServices.CreateScope();
+                var serviceBusConsumer = scope.ServiceProvider.GetRequiredService<IAzureServiceBusConsumer>();
+                serviceBusConsumer.Start();
+            });
+
+            hostApplicationLife.ApplicationStopping.Register(() =>
+            {
+                var scope = app.ApplicationServices.CreateScope();
+                var serviceBusConsumer = scope.ServiceProvider.GetRequiredService<IAzureServiceBusConsumer>();
+                serviceBusConsumer.Stop();
+            });
 
             return app;
-        }
-
-        private static void OnStop()
-        {
-            ServiceBusConsumer.Stop();
-        }
-
-        private static void OnStart()
-        {
-            ServiceBusConsumer.Start();
         }
     }
 }

@@ -1,10 +1,10 @@
-# Comic Book Shop - Documentation - Version 1.0.2
+# Comic Book Shop - Documentation - Version 1.0.3
 
 [<img src="cbsa.png">]()
 
 welcome to the comic book shop. A full stack .net project.
 
-want to contribute or report issues, repo is [available here](https://github.com/Jay-study-nildana/comicbookshop). 
+want to contribute or report issues, repo is [available here](https://github.com/Jay-study-nildana/comicbookshop).
 
 GitHub Project Board is [available here](https://github.com/users/Jay-study-nildana/projects/8)
 
@@ -17,11 +17,11 @@ read more about the project architecture [here](projectarc.md)
 # More Explanations
 
 1. [how to run](howtorun.md)
-    1. [notes about sql server](sqllocal.md)
-    1. [notes about azure service bus](azureservicebus.md)
-    1. [notes about auth](auth.md)
-    1. [notes about stripe](stripe.md)
-    1. [notes about dummy data](dummydata.md)
+   1. [notes about sql server](sqllocal.md)
+   1. [notes about azure service bus](azureservicebus.md)
+   1. [notes about auth](auth.md)
+   1. [notes about stripe](stripe.md)
+   1. [notes about dummy data](dummydata.md)
 1. [issues and known problems](issues.md)
 1. [video tutorials](video.md)
 

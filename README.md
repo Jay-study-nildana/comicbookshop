@@ -1,6 +1,6 @@
 # comic book shop - Version 1.0.3
 
-Full stack project with .Net as BackEnd and Razor for FrontEnd. 
+Full stack project with .Net as BackEnd and Razor for FrontEnd for my students.
 
 documentation is [available here](https://jay-study-nildana.github.io/comicbookshop/)
 
